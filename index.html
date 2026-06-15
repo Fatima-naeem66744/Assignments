@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Neon Salvage</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="game-panel" aria-label="Neon Salvage game">
+        <header class="hud" aria-label="Game status">
+          <div>
+            <span class="label">Score</span>
+            <strong id="score">0</strong>
+          </div>
+          <div>
+            <span class="label">Level</span>
+            <strong id="level">1</strong>
+          </div>
+          <div>
+            <span class="label">Energy</span>
+            <strong id="energy">100</strong>
+          </div>
+          <div>
+            <span class="label">Best</span>
+            <strong id="best">0</strong>
+          </div>
+        </header>
+
+        <div class="canvas-wrap">
+          <canvas id="game" width="960" height="600" aria-label="Game canvas"></canvas>
+          <div class="overlay" id="overlay">
+            <h1>Neon Salvage</h1>
+            <p>Collect power cells, avoid sentry drones, and survive as the station speeds up.</p>
+            <button id="startBtn" type="button">Start Mission</button>
+          </div>
+        </div>
+
+        <footer class="controls">
+          <button id="pauseBtn" type="button" aria-label="Pause or resume game">
+            <span aria-hidden="true">⏯</span>
+            <span>Pause</span>
+          </button>
+          <button id="restartBtn" type="button" aria-label="Restart game">
+            <span aria-hidden="true">↻</span>
+            <span>Restart</span>
+          </button>
+        </footer>
+      </section>
+
+      <aside class="side-panel" aria-label="Mission details">
+        <div class="brand">
+          <span class="mark" aria-hidden="true"></span>
+          <div>
+            <h2>Neon Salvage</h2>
+            <p>Arcade survival game</p>
+          </div>
+        </div>
+
+        <section>
+          <h3>Objective</h3>
+          <p>Grab glowing cells before your energy drains. Every fourth pickup increases the level and sends faster drones into the arena.</p>
+        </section>
+
+        <section>
+          <h3>Controls</h3>
+          <ul>
+            <li><kbd>WASD</kbd> or <kbd>Arrow Keys</kbd> move</li>
+            <li><kbd>Space</kbd> activates a short shield pulse</li>
+            <li><kbd>P</kbd> pauses the game</li>
+            <li>On mobile, drag anywhere on the game area</li>
+          </ul>
+        </section>
+
+        <section class="tips">
+          <h3>Power Cells</h3>
+          <div class="legend-row"><span class="cell normal"></span> Standard cell: +10 score</div>
+          <div class="legend-row"><span class="cell bonus"></span> Overcharged cell: +25 score and energy boost</div>
+          <div class="legend-row"><span class="cell danger"></span> Drone contact drains energy unless shielded</div>
+        </section>
+      </aside>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
